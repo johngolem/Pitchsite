@@ -1,0 +1,26 @@
+
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="col-md-8">
+
+            <button>New Pitch</button>
+        </div>
+
+        <div class="col-md-4">
+
+            {{ wtf.quick_form(pitch_form) }}
+        </div>
+
+    </div>
+
+{% endblock %}
+
+<!-- <h1>Categories</h1>
+<h2>Pickup Lines</h2>
+<h2>Interview Pitches</h2>
+<h2>Product Pitches</h2>
+<h2>Promotion Pitches</h2> -->
