@@ -5,6 +5,7 @@ from ..models import Pitch, User
 from wtforms import ValidationError
 from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
+
 class PitchForm(FlaskForm):
 
     title = StringField('Pitch title',validators=[Required()])
