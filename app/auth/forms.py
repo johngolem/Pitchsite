@@ -6,12 +6,7 @@ from wtforms import ValidationError
 from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
 
-class PitchForm(FlaskForm):
 
-    title = StringField('Pitch title',validators=[Required()])
-    category=StringField('Pitch Category', validators=[Required()])
-    Pitch = TextAreaField('New Pitch', validators=[Required()])
-    submit = SubmitField('Submit')
 
 class RegistrationForm(FlaskForm):
     email = StringField('Your Email Address',validators=[Required(),Email()])

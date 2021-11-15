@@ -2,10 +2,9 @@ from . import main
 from flask import render_template,request,redirect,url_for,abort
 from flask_login import login_required
 from ..models import Pitch,User
-from ..auth import PitchForm
-from .forms import ReviewForm,UpdateProfile
+from .forms import  PitchForm,UpdateProfile
 from .. import db
-
+from .forms import UpdateProfile,PitchForm
 
 
 
@@ -13,13 +12,22 @@ from .. import db
 
 @main.route('/')
 def index ():
-    return render_template("index.html")
+    p="Hello World"
+    # pitches = Pitch.query.all()
+    # technology = Pitch.query.filter_by(category = 'Technology').all() 
+    # business = Pitch.query.filter_by(category = 'Business').all()
+    # programming = Pitch.query.filter_by(category = 'Programming').all()
+    # religion = Pitch.query.filter_by(category = 'Religion').all()
+    # sports = Pitch.query.filter_by(category = 'Sports').all()
+    # social = Pitch.query.filter_by(category = 'Social').all()
+    # return render_template('index.html', pitches = pitches, technology = technology,business = business,programming= programming,religion = religion,sports = sports,social = social)
+    return render_template("index.html",p=p)
 
-@main.route('/pitch//new/<int:id>', methods = ['GET','POST'])
+# @main.route('/pitch//new/<int:id>', methods = ['GET','POST'])
+@main.route('/create_new', methods = ['POST','GET'])
 @login_required
 def new_pitch(id):
     form = PitchForm()
-#     pitch = get_pitch(id)
 
     if form.validate_on_submit():
         title = form.title.data
