@@ -13,14 +13,14 @@ from .forms import UpdateProfile,PitchForm
 @main.route('/')
 def index ():
     p="Hello World"
-    # pitches = Pitch.query.all()
-    # technology = Pitch.query.filter_by(category = 'Technology').all() 
-    # business = Pitch.query.filter_by(category = 'Business').all()
-    # programming = Pitch.query.filter_by(category = 'Programming').all()
-    # religion = Pitch.query.filter_by(category = 'Religion').all()
-    # sports = Pitch.query.filter_by(category = 'Sports').all()
-    # social = Pitch.query.filter_by(category = 'Social').all()
-    # return render_template('index.html', pitches = pitches, technology = technology,business = business,programming= programming,religion = religion,sports = sports,social = social)
+    pitches = Pitch.query.all()
+    technology = Pitch.query.filter_by(category = 'Technology').all() 
+    business = Pitch.query.filter_by(category = 'Business').all()
+    programming = Pitch.query.filter_by(category = 'Programming').all()
+    religion = Pitch.query.filter_by(category = 'Religion').all()
+    sports = Pitch.query.filter_by(category = 'Sports').all()
+    social = Pitch.query.filter_by(category = 'Social').all()
+    return render_template('index.html', pitches = pitches, technology = technology,business = business,programming= programming,religion = religion,sports = sports,social = social)
     return render_template("index.html",p=p)
 
 # @main.route('/pitch//new/<int:id>', methods = ['GET','POST'])
