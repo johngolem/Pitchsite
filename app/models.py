@@ -18,8 +18,6 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(255),unique = True,nullable = False)
     email = db.Column(db.String(255),unique = True,index = True)
     bio = db.Column(db.String(255))
-   ##mine password_hash = db.Column(db.String(255))
-   ##mine pass_secure = db.Column(db.String(255))
     secure_password = db.Column(db.String(255),nullable = False)
     #profile_pic_path = db.Column(db.String())
     pitches = db.relationship('Pitch', backref='user', lazy='dynamic')
@@ -51,8 +49,6 @@ class User(UserMixin,db.Model):
         return f'User {self.username}'
 
 
-    def __repr__(self):
-        return f'User {self.username}'
 
 class Pitch(db.Model):
     __tablename__='pitches'

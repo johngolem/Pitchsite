@@ -11,13 +11,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}"> -->
 
-    {% if title%}
-        <title>{{title}}</title>
-    {% else %}
-        <title> Pitch Center</title>
-    {% endif %}    
+   
+        <title> Pitch Center</title>   
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
@@ -29,14 +26,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active"  href="{{url_for('main.index')}}">Home</a>
             </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link"  href="#">{{current_user.username}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('main.profile',name=current_user.username)}}">Profile</a>
+              <a class="nav-link" href="/">Profile</a>
             </li>
             <li class="nav-item">
               <button onclick="pitchfunction()" class="btn btn-primary"><a class="nav-link" href="{{url_for('main.new_pitch')}}">PITCH NOW</a></button>
